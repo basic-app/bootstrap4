@@ -18,9 +18,9 @@ class Services extends \CodeIgniter\Config\BaseService
         {
             $config = config(Bootstrap4::class);
 
-            if ($config->url)
+            if ($config->useCdn)
             {
-                return new Bootstrap4CDNAsset(__FUNCTION__, $config->url);
+                return new Bootstrap4CDNAsset(__FUNCTION__, $config->cdnUrl, $config->version);
             }
             else
             {

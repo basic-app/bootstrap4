@@ -23,10 +23,17 @@ PublisherEvents::onPublish(
         }
 
         $publisher->download(
-            'https://github.com/twbs/bootstrap/releases/download/v' . $config->version. '/bootstrap-' . $config->version . '-dist.zip', 
+            'https://github.com/twbs/bootstrap/releases/download/v' 
+                . $config->version
+                . '/bootstrap-' 
+                . $config->version 
+                . '-dist.zip', 
             fcpath('assets/bootstrap4/bootstrap4.zip'), 
             $event->refresh
         );
-        
+
+        $publisher->unzip(fcpath('assets/bootstrap4/bootstrap4.zip'), fcpath('assets/bootstrap4'));
+
+        $publisher->delete(fcpath('assets/bootstrap4/bootstrap4.zip'));
     }
 );

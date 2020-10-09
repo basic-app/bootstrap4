@@ -9,11 +9,12 @@ namespace BasicApp\JQuery;
 class Bootstrap4CDNAsset extends \BasicApp\Asset\BaseAsset
 {
 
-    public function __construct(string $id, string $url)
+    public function __construct(string $id, string $cdnUrl, string $version)
     {
         parent::__construct($id);
 
-        $this->js[] = $url;
+        $this->css[] = $cdnUrl . '/' . $version .'/js/bootstrap.min.js';
+        $this->js[] = $cdnUrl . '/' . $version . '/css/bootstrap.min.css';
     }
 
 }

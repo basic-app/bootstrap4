@@ -11,6 +11,8 @@ class Bootstrap4 extends \CodeIgniter\Config\BaseConfig
 
     public $version = '4.1.3';
 
-    public $url;
+    public $cdnUrl = 'https://stackpath.bootstrapcdn.com/bootstrap';
+
+    public $useCdn = false;
 
 }
