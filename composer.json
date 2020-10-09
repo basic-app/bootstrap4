@@ -5,5 +5,10 @@
         "psr-4": {
             "BasicApp\\Bootstrap4\\": ""
         }
-    }
+    },
+    "require": {
+        "basic-app/asset": "*",
+        "basic-app/publisher": "*",
+        "basic-app/path-helper": "*"
+    }    
 }
