@@ -14,7 +14,7 @@ class Bootstrap4Asset extends \BasicApp\Asset\BaseAsset
         parent::__construct($id);
 
         $this->js[] = base_url('assets/bootstrap4/js/bootstrap.min.js');
-        $this->css[] = base_url('assets/bootstrap4/css/bootstrap.min.js');
+        $this->css[] = base_url('assets/bootstrap4/css/bootstrap.min.css');
     }
 
 }

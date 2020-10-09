@@ -4,7 +4,7 @@
  * @license MIT
  * @link https://basic-app.com
  */
-namespace BasicApp\JQuery\Config;
+namespace BasicApp\Bootstrap4\Config;
 
 use BasicApp\Bootstrap4\Bootstrap4Asset;
 use BasicApp\Bootstrap4\Bootstrap4CDNAsset;
