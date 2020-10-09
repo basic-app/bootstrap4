@@ -22,7 +22,7 @@ PublisherEvents::onPublish(
             $publisher->deleteIfExists(fcpath('assets/bootstrap4'));
         }
 
-        $publisher->download(
+        $downloaded = $publisher->downloadIfNotExists(
             'https://github.com/twbs/bootstrap/releases/download/v' 
                 . $config->version
                 . '/bootstrap-' 
@@ -32,8 +32,11 @@ PublisherEvents::onPublish(
             $event->refresh
         );
 
-        $publisher->unzip(fcpath('assets/bootstrap4/bootstrap4.zip'), fcpath('assets/bootstrap4'));
+        if ($downloaded)
+        {
+            $publisher->unzip(fcpath('assets/bootstrap4/bootstrap4.zip'), fcpath('assets/bootstrap4'));
 
-        $publisher->delete(fcpath('assets/bootstrap4/bootstrap4.zip'));
+            $publisher->delete(fcpath('assets/bootstrap4/bootstrap4.zip'));
+        }
     }
 );
