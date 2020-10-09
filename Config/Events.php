@@ -28,15 +28,12 @@ PublisherEvents::onPublish(
                 . '/bootstrap-' 
                 . $config->version 
                 . '-dist.zip', 
-            fcpath('assets/bootstrap4/bootstrap4.zip'), 
-            $event->refresh
+            fcpath('assets/bootstrap4/bootstrap4.zip')
         );
 
         if ($downloaded)
         {
             $publisher->unzip(fcpath('assets/bootstrap4/bootstrap4.zip'), fcpath('assets/bootstrap4'));
-
-            $publisher->delete(fcpath('assets/bootstrap4/bootstrap4.zip'));
         }
     }
 );
